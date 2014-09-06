@@ -1,0 +1,258 @@
+// ///////////////////////////////////////
+// 
+//  Variables
+//
+// ///////////////////////////////////////
+
+@orange: rgba(244,104, 1, 1); // 244,104,1
+@link-color: @orange;
+@white: #fff;
+@off-white: #f9f9f9;
+@base-grey: #777779;
+
+@primary-sans: 'ff-meta-web-pro-condensed', 'roboto-condensed', 'helveticaneue', 'helvetica neue', sans-serif;
+@primary-serif: 'ff-meta-serif-web-pro', serif;
+
+
+@typeset-margin: 1.40rem 0;
+
+@base-unit: 1rem;
+
+::moz-selection {
+  background-color: @orange;
+  color: @white;
+}
+
+::selection  {
+  background-color: @orange;
+  color: @white;
+}
+
+body {
+/*   background-color: @white; */
+  
+  .background-size(cover);
+  font-size: 1rem;
+  line-height: 1.7125;
+  margin: 0;
+  -webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
+  -webkit-text-size-adjust: 100%; 
+  font-family: @primary-serif;
+  
+/*
+  @media screen and (max-width: 38.25rem) {
+    background-size: 270%;
+  } 
+*/
+}
+	
+*, 
+*:before,
+*:after {
+  .box-sizing(border-box);
+}
+
+a {
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  color: @link-color;
+  .transition(all .25s ease-in-out);
+  border: none;
+  font-weight: normal;
+  font-weight: 700;
+  
+  &:hover {
+    .transition(all .25s ease-in-out);
+  }
+}
+
+a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: @orange;
+  bottom: -2px;
+  right: 0%;
+  .transition(all .25s ease-in-out);
+}
+
+a::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: @orange;
+  top: -2px;
+  right: 50%;
+  .transition(all .25s ease-in-out);
+}
+
+a:hover::after {
+  width: 100%;
+  left: 0;
+}
+.overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(255,255,255,.93);
+  z-index: 6;
+  top: 0;
+  left: 0;
+}
+
+.wrapper {
+  background: url('/assets/img/background.JPG') no-repeat;
+  .background-size(cover);
+  text-align: center;
+  top: 0;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-box;
+  display: -moz-box;
+  display: box;
+  box-orient: vertical;
+  -ms-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -wekit-box-orient: vertical;
+  -ms-box-pack: center;
+  -moz-box-pack: center;
+  -webkit-box-pack: center;
+  box-pack: center;
+  z-index: 5;
+  position: absolute;
+}
+
+.content {
+  width: 80%;
+  padding: (@base-unit * 1);
+  color: @base-grey;
+  height: 100%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-box;
+  display: -moz-box;
+  display: box;
+  box-orient: vertical;
+  -ms-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -webkit-box-orient: vertical;
+  -ms-box-pack: center;
+  -moz-box-pack: center;
+  -webkit-box-pack: center;
+  box-pack: center;
+  z-index: 7;
+/*   background-color: rgba(255,255,255,.93); */
+  clear: both; 
+}
+
+@media screen and (min-width: 75rem) {
+  .content {
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 30rem) and (max-width: 74rem) {
+  .content {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 30.5rem) {
+  .content {
+    width: 100%;
+  }
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  text-align: left;
+  margin: @typeset-margin;
+  line-height: 1.4125;
+}
+
+h1 {
+  font-size: @base-unit * 2.35;
+  font-family: @primary-sans;
+  font-weight: bold;
+  color: darken(@base-grey, 10%);
+    
+    @media screen and (max-width: 38.25rem) {
+      font-size: @base-unit * 2.35;
+    }
+  
+    @media screen and (min-width: 81rem) {
+      font-size: @base-unit * 5;
+    }
+}
+
+p {
+  font-size: @base-unit * 1;
+  
+  @media screen and (min-width: 81rem) {
+    font-size: @base-unit * 2;
+  }
+}
+
+.me {
+  text-align: left;
+  margin-bottom: 2rem;
+  
+  @media screen and (max-width: 38.25rem) {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+}
+.me > img {
+  border: 3px solid @white;
+  border-radius: 50%;
+  .box-shadow(0 2px 5px rgba(0,0,0,.2));
+  width: 10rem;
+  
+  @media screen and (min-width: 81rem) {
+    width: 17rem;
+  }
+}
+
+
+
+a.btn {
+  padding: 1rem 2.25rem;
+  border: 1px solid @orange;
+  color: @white;
+  background-color: @orange;
+  display: inline-block;
+  font-family: @primary-sans;
+  font-weight: normal;
+  outline: 0;
+  cursor: pointer;
+  text-decoration: none;
+  .transition(all .25s ease-in-out); 
+  border-radius: 6px;
+  margin: 2rem 0;
+  
+  &:active {
+    background-color: darken(@orange, 5.5%);
+    .transition(all .25s ease-in-out);
+    .box-shadow(inset 0 3px 6px rgba(0,0,0,.3));
+  }
+}
+
+a.btn>span.arrow {
+  .transition(all .25s ease-in-out);
+  position: relative;
+  left: 0;
+}
+
+a:hover.btn>span.arrow {
+  .transition(all .25s ease-in-out);
+  left: .5rem;
+}
+
+a.btn:before,
+a.btn:after {
+  border: none;
+  height: 0px;
+}
+
